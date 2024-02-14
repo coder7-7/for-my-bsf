@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Day Surprise</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .bear {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    background-color: #b96f6a;
+    border-radius: 50%;
+    margin-right: 30px;
+  }
+  .heart {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #ff4d4d;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    margin-right: 30px;
+  }
+  .envelope {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    background-color: #ffcc99;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .envelope:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #ffcc99;
+  }
+  .letter {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+  }
+  .envelope.open .letter {
+    display: block;
+  }
+  .message {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="bear"></div>
+<div class="heart"></div>
+<div class="envelope" onclick="openEnvelope()">
+  <div class="letter">
+    <p class="message">Dear Valentine,</p>
+    <p class="message">You mean everything to me. Wishing you a happy Valentine's Day filled with love and joy.</p>
+    <p class="message">With all my love,</p>
+    <p class="message">Your Special Someone</p>
+  </div>
+</div>
+
+<script>
+  function openEnvelope() {
+    var envelope = document.querySelector('.envelope');
+    envelope.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
